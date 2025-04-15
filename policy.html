@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rebrowse Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --accent: #3b82f6;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    body.dark {
+      --bg: #111827;
+      --text: #f3f4f6;
+      --card: #1f2937;
+      --border: #374151;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 24px;
+      background: var(--card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: background 0.3s, border 0.3s;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px;
+    }
+
+    .section {
+      border-top: 1px solid var(--border);
+      padding: 16px 0;
+      cursor: pointer;
+    }
+
+    .section h2 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .section.open .section-content {
+      max-height: 500px;
+      margin-top: 10px;
+    }
+
+    .toggle-btn {
+      float: right;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #2563eb;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    em {
+      color: #6b7280;
+      display: block;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="toggle-btn" id="toggleMode">Toggle Dark Mode</button>
+    <h1>Rebrowse Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> April 15, 2025</p>
+
+    <div class="section">
+      <h2>1. What Data We Collect <span>➕</span></h2>
+      <div class="section-content">
+        <p>
+          Rebrowse tracks the domain name of websites you visit and how much time you spend on each one. 
+          This data is collected locally on your device.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. How We Use This Data <span>➕</span></h2>
+      <div class="section-content">
+        <p>
+          This data is used solely to display browsing statistics in the Rebrowse popup. 
+          We do not use this data for any other purpose.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. Data Storage <span>➕</span></h2>
+      <div class="section-content">
+        <p>
+          All data is stored using the browser's local storage (<code>chrome.storage.local</code>). 
+          It never leaves your device and is never sent to any remote server.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. No Personal Information Collected <span>➕</span></h2>
+      <div class="section-content">
+        <p>
+          Rebrowse does not collect or store any personal information, including:
+          your name, email address, IP address, location, or browsing content.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5. Third-Party Sharing <span>➕</span></h2>
+      <div class="section-content">
+        <p>
+          Rebrowse does not share any data with third parties.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>6. Contact <span>➕</span></h2>
+      <div class="section-content">
+        <p>
+          If you have any questions or concerns about this privacy policy, please contact us at 
+          <a href="mailto:youremail@example.com">goharshinwari15@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+
+    <em>Rebrowse is committed to privacy-first design and local-only data processing.</em>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    document.getElementById("toggleMode").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // Accordion toggle
+    document.querySelectorAll(".section").forEach(section => {
+      section.addEventListener("click", () => {
+        const isOpen = section.classList.contains("open");
+        document.querySelectorAll(".section").forEach(s => {
+          s.classList.remove("open");
+          s.querySelector("span").textContent = "➕";
+        });
+        if (!isOpen) {
+          section.classList.add("open");
+          section.querySelector("span").textContent = "➖";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
